@@ -20,13 +20,18 @@ if(isset($_POST['add_author']))
     )
     ";
 
-    mysqli_query($conn,$sql);
-
+    if(mysqli_query($conn,$sql))
+{
     echo "
     <div class='success-message'>
         Author Added Successfully
     </div>
     ";
+}
+else
+{
+    die("Error: " . mysqli_error($conn));
+}
 }
 
 if(isset($_POST['add_publisher']))
@@ -47,13 +52,18 @@ if(isset($_POST['add_publisher']))
     )
     ";
 
-    mysqli_query($conn,$sql);
-
+    if(mysqli_query($conn,$sql))
+{
     echo "
     <div class='success-message'>
         Publisher Added Successfully
     </div>
     ";
+}
+else
+{
+    die("Error: " . mysqli_error($conn));
+}
 }
 
 if(isset($_POST['add_category']))
@@ -71,13 +81,18 @@ if(isset($_POST['add_category']))
     )
     ";
 
-    mysqli_query($conn,$sql);
-
+   if(mysqli_query($conn,$sql))
+{
     echo "
     <div class='success-message'>
         Category Added Successfully
     </div>
     ";
+}
+else
+{
+    die("Error: " . mysqli_error($conn));
+}
 }
 ?>
 
@@ -123,7 +138,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             placeholder="USA"
             required>
 
-           <button type="submit" name="add">
+           <button type="submit" name="add_author">
     <i class="fa-solid fa-plus"></i>
     Add Author
 </button>
@@ -154,7 +169,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             placeholder="Publisher Address"
             required>
 
-          <button type="submit" name="add">
+          <button type="submit" name="add_publisher">
     <i class="fa-solid fa-plus"></i>
     Add Publisher
 </button>
@@ -177,7 +192,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             placeholder="Technical"
             required>
 
-           <button type="submit" name="add">
+           <button type="submit" name="add_category">
     <i class="fa-solid fa-plus"></i>
     Add Category
 </button>

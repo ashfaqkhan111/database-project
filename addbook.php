@@ -12,8 +12,16 @@ if(isset($_POST['add_book'])){
     $sql = "INSERT INTO books(title,isbn,publication_year,available_copies, author_id,category_id,publisher_id)
     VALUES ('$title','$isbn','$publication_year','$avalible_copies','$author_id','$category_id','$publisher_id')";
 
-    mysqli_query($conn, $sql);
-    echo "Book Added Successfully";
+    if(mysqli_query($conn, $sql))
+{
+    echo "<div class='success-message'>Book Added Successfully</div>";
+}
+else
+{
+    echo "<div class='error-message'>Error: "
+         . mysqli_error($conn)
+         . "</div>";
+}
 
 }
 ?>
@@ -80,7 +88,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             ?>
 
             </select>
-            <label for="publisher_id">Publisher</label>
+            <label for="publisher_id">Publisher</label> 
             <select name="publisher_id">
 
                 <?php

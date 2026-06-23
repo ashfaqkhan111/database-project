@@ -12,7 +12,7 @@ align-items: center;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
-.search-form button{ 
+.search-form button{
     padding: 10px 20px;
     background: #2c3e50;
     color: white;
@@ -132,4 +132,85 @@ h2{
 }
 .welcome-message{
     color: white;
+}
+
+
+
+
+/* edit member */
+
+
+.status-active{
+    background:#d4edda;
+    color:#155724;
+    padding:5px 10px;
+    border-radius:4px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.status-inactive{
+    background:#f8d7da;
+    color:#721c24;
+    padding:5px 10px;
+    border-radius:4px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.action-edit{
+    color:#4a148c;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.action-edit:hover{
+    text-decoration:underline;
+}
+
+.form-box{
+    max-width:700px;
+    margin:30px auto;
+}
+
+
+
+/* all books */
+
+.search-box{
+    margin-bottom:20px;
+    margin-left: 580px;
+}
+
+.search-box form{
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    width:350px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.search-box button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#2c3e50;
+    color:white;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#34495e;
+}
+
+
+
+/*view fine*/
+
+.amount{
+    white-space: nowrap;
 }

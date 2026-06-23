@@ -11,7 +11,7 @@
     color:white;
     text-align: center;
     padding: 20px 10px;
-    margin: 0; 
+    margin: 0;
 }
 .sidebar a{
     display: block;
@@ -51,4 +51,58 @@
 }
 .dropdown-content a:hover{
 background-color: #34495e;
+}
+
+
+/* Welcome User Box */
+
+.welcome-message{
+    color:white;
+    margin:15px;
+    padding:12px;
+    background:#34495e;
+    border-radius:8px;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* Icons */
+
+.sidebar h2 i,
+.drop-menu i,
+.dropdown-content a i,
+.menu-link i,
+.welcome-message i{
+    width:20px;
+    text-align:center;
+    margin-right:8px;
+}
+
+/* Better alignment */
+
+.drop-menu{
+    display:flex;
+    align-items:center;
+}
+
+.dropdown-content a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white; /* change from red */
+}
+
+.menu-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* Hover Effects */
+
+.menu-link:hover,
+.dropdown-content a:hover{
+    background-color:#34495e;
 }
