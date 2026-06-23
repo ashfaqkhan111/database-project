@@ -1,6 +1,16 @@
 
 <?php
 
+
+
+session_start();
+
+if (!isset($_SESSION['librarian_id']))
+{
+    header("Location: index.php");
+    exit();
+}
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -143,6 +153,8 @@ if(isset($_GET['book_id']))
     <link rel="stylesheet" href="css/pagespec.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
@@ -271,7 +283,7 @@ if(isset($_GET['book_id']))
     }
     ?>
 
-    <!-- SELECTED BOOK -->
+   
 
     <?php if($book){ ?>
 
@@ -349,13 +361,10 @@ if(isset($_GET['book_id']))
             name="due_date"
             required>
 
-            <button
-            type="submit"
-            name="borrow_book">
-
-                Borrow Book
-
-            </button>
+            <button type="submit" name="borrow_book">
+    <i class="fa-solid fa-book"></i>
+    Borrow Book
+</button>
 
         </form>
 
@@ -369,44 +378,93 @@ if(isset($_GET['book_id']))
 
 <div class="sidebar">
 
-  
+    <!-- <p class="welcome-message">
+        <i class="fa-solid fa-user"></i>
+        Welcome, <?php echo $_SESSION['librarian_name']; ?>
+    </p> -->
 
     <h2>
-        <a href="dashboard.php">Library Management</a>
+        <a href="dashboard.php">
+            <i class="fa-solid fa-book-open"></i>
+            Library Management
+        </a>
     </h2>
 
     <button class="drop-menu">
+        <i class="fa-solid fa-book"></i>
         Manage Books
     </button>
 
     <div class="dropdown-content">
-        <a href="addbook.php">Add Book</a>
-        <a href="viewbooks.php">View Books</a>
-        <a href="edit_book.php">Edit Books</a>
-        <a href="borrow_book.php">Borrow a Book</a>
-        <a href="returnbook.php">Return a Book</a>
-        <a href="author_publisher.php">Add Author & Publisher</a>
+        <a href="addbook.php">
+            <i class="fa-solid fa-plus"></i>
+            Add Book
+        </a>
+
+        <a href="viewbooks.php">
+            <i class="fa-solid fa-book-open-reader"></i>
+            View Books
+        </a>
+
+        <a href="edit_book.php">
+            <i class="fa-solid fa-pen-to-square"></i>
+            Edit Books
+        </a>
+
+        <a href="borrow_book.php">
+            <i class="fa-solid fa-arrow-right"></i>
+            Borrow a Book
+        </a>
+
+        <a href="returnbook.php">
+            <i class="fa-solid fa-arrow-left"></i>
+            Return a Book
+        </a>
+
+        <a href="author_publisher.php">
+            <i class="fa-solid fa-user-pen"></i>
+            Authors & Publishers
+        </a>
     </div>
 
     <button class="drop-menu">
+        <i class="fa-solid fa-users"></i>
         Manage Members
     </button>
 
     <div class="dropdown-content">
-        <a href="registration.php">Register</a>
-        <a href="editmember.php">View & Edit Members</a>
+        <a href="registration.php">
+            <i class="fa-solid fa-user-plus"></i>
+            Register Member
+        </a>
+
+        <a href="editmember.php">
+            <i class="fa-solid fa-user-gear"></i>
+            View & Edit Members
+        </a>
     </div>
 
     <button class="drop-menu">
+        <i class="fa-solid fa-money-bill-wave"></i>
         Fine Management
     </button>
 
     <div class="dropdown-content">
-        <a href="viewfines.php">View Fine</a>
-        <a href="update_fine.php">Update Fine</a>
+        <a href="viewfines.php">
+            <i class="fa-solid fa-receipt"></i>
+            View Fine
+        </a>
+
+        <a href="update_fine.php">
+            <i class="fa-solid fa-file-pen"></i>
+            Update Fine
+        </a>
     </div>
 
-    <a class="menu-link" href="index.php">Logout</a>
+    <a class="menu-link" href="index.php">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
 
 </div>
 

@@ -38,22 +38,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="css/global.css">
-    <link  rel="stylesheet" href="css/pagespec.css"
+    <link  rel="stylesheet" href="css/pagespec.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+
+<style>
+    body{
+         background-image: url("images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+</style>
 
 
 
     <div class="form-box">
 <h1>Login</h1>
     
-    <form class="login-form" method="POST" action="">
+    <form class="login-form" method="POST" action="">   
 
         <div>
             <label for="lid">Librarian Code</label>
             
             <input type="text" name="lid" id="lid"
-                   placeholder="LI0000000002" required>
+                   placeholder="LIB000000" required>
         </div>
 
         <div>
@@ -70,9 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    id="pass" placeholder="********" required>
         </div>
                
-        <div>
-            <button type="submit">Login</button>
-        </div>
+       <button type="submit" name="login" class="login-btn">
+    <i class="fa-solid fa-right-to-bracket"></i>
+    Login
+</button>
 
         <?php
         if (!empty($error)) {
